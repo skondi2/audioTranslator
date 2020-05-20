@@ -38,4 +38,4 @@ Enter desired language code: es
 Original Text: You know Demons on TV like that and and for people to expose themselves to being rejected on TV or humiliated by fear factor or.
 Translation: Usted conoce a los demonios en la televisión como esa y para que las personas se expongan a ser rechazadas en la televisión o humilladas por el factor de miedo o.
 Powered by Yandex.Translate.
-'''
+```
