@@ -78,7 +78,8 @@ def translate():
     lang = raw_input("Enter desired language code. Enter 'options' for possible langauge codes: ")
 
     if str(lang) == "options":
-        lang = raw_input("Options: \nBasque: 'eu' \nWelsh: 'cy' \nDutch: 'nl' \nItalian: 'it'\nSpanish: 'es'\nGerman: 'de'\nFrench: 'fr'\nDanish: 'da'\n")
+        print("Options: \nBasque: 'eu' \nWelsh: 'cy' \nDutch: 'nl' \nItalian: 'it'\nSpanish: 'es'\nGerman: 'de'\nFrench: 'fr'\nDanish: 'da'\n")
+        lang = raw_input("Enter desired language code: ")
 
     # url = upload_file(filepath, my_token)
     # url = "https://s3-us-west-2.amazonaws.com/blog.assemblyai.com/audio/8-7-2018-post/7510.mp3"
@@ -94,7 +95,7 @@ def translate():
         exit(1)
 
     # print(status)
-    print("Original Text: " + text)
+    print("Original Text: \n" + text)
 
     endpoint_1 = "https://translate.yandex.net/api/v1.5/tr/translate?key=trnsl.1.1.20200519T200302Z.d34cc59f3f11cfaf.f" \
                  "3ab7d2fe09da37afa4dc92ea3c42c3551a5a244&text={0}&lang=en-{1}&format=plain&options=1"\
@@ -103,15 +104,15 @@ def translate():
     response_1 = requests.get(endpoint_1)
     #print(response_1.text)
 
-    xml_text = response_1.text
-    if str(xml_text).find("Error code"):
+    if not(response_1.ok):
         print("Error in translating")
         exit(1)
 
-    my_dict = xmltodict.parse(xml_text)
+    my_dict = xmltodict.parse(response_1.text)
+    print("")
+    print("Translated Text: ")
     print(my_dict["Translation"]["text"])
-    translated = "Translation: {0}".format(str(my_dict["Translation"]["text"]))
-    print(translated)
+
     print("Powered by Yandex.Translate")
 
 
