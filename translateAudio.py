@@ -78,7 +78,7 @@ def translate():
     lang = raw_input("Enter desired language code. Enter 'options' for possible langauge codes: ")
 
     if str(lang) == "options":
-        lang = raw_input("Options: \nBasque: 'eu' \nWelsh: 'cy' \nDutch: 'nl' \nItalian: 'it'\nSpanish: 'es'\nGerman: 'de'\nFrench: 'fr'\n")
+        lang = raw_input("Options: \nBasque: 'eu' \nWelsh: 'cy' \nDutch: 'nl' \nItalian: 'it'\nSpanish: 'es'\nGerman: 'de'\nFrench: 'fr'\nDanish: 'da'\n")
 
     # url = upload_file(filepath, my_token)
     # url = "https://s3-us-west-2.amazonaws.com/blog.assemblyai.com/audio/8-7-2018-post/7510.mp3"
